@@ -7,22 +7,23 @@ NC='\033[0m' # No Color
 
 BORDER=${GREEN}
 INSIDE=${CYAN}
+OUTPUT='output.log'
 
 clear
-echo -e "${BORDER}******************************\n* ${INSIDE}Beginning update procedure${BORDER} *\n******************************\n${NC}" | tee output.log
-apt-get update | tee output.log -a
-echo -e "\n" | tee output.log -a
+echo -e "${BORDER}******************************\n* ${INSIDE}Beginning update procedure${BORDER} *\n******************************\n${NC}" | tee ${OUTPUT}
+apt-get update | tee ${OUTPUT} -a
+echo -e "\n" | tee ${OUTPUT} -a
 clear
-echo -e "${BORDER}********************\n* ${INSIDE}Upgrading Distro${BORDER} *\n********************\n${NC}" | tee output.log -a
-apt-get dist-upgrade -y | tee output.log -a
-echo -e "\n" | tee output.log -a
+echo -e "${BORDER}********************\n* ${INSIDE}Upgrading Distro${BORDER} *\n********************\n${NC}" | tee ${OUTPUT} -a
+apt-get dist-upgrade -y | tee ${OUTPUT} -a
+echo -e "\n" | tee ${OUTPUT} -a
 clear
-echo -e "${BORDER}*********************************\n* ${INSIDE}Removing unnecessary packages${BORDER} *\n*********************************\n${NC}" | tee output.log -a
-apt-get autoremove -y | tee output.log -a
-echo -e "\n" | tee output.log -a
+echo -e "${BORDER}*********************************\n* ${INSIDE}Removing unnecessary packages${BORDER} *\n*********************************\n${NC}" | tee ${OUTPUT} -a
+apt-get autoremove -y | tee ${OUTPUT} -a
+echo -e "\n" | tee ${OUTPUT} -a
 clear
-echo -e "${BORDER}****************************\n* ${INSIDE}Cleaning up package list${BORDER} *\n****************************\n${NC}" | tee output.log -a
-apt-get autoclean -y | tee output.log -a
-echo -e "\n" | tee output.log -a
+echo -e "${BORDER}****************************\n* ${INSIDE}Cleaning up package list${BORDER} *\n****************************\n${NC}" | tee ${OUTPUT} -a
+apt-get autoclean -y | tee ${OUTPUT} -a
+echo -e "\n" | tee ${OUTPUT} -a
 clear
-cat output.log
+cat ${OUTPUT}
