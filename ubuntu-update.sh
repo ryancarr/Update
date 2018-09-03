@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script works in most Debian based distros: Debian, Ubuntu, Linux Mint
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
